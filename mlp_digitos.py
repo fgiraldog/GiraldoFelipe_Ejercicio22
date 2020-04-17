@@ -52,12 +52,12 @@ plt.tight_layout()
 plt.savefig('loss_f1.png')
 
 mlp_best = sklearn.neural_network.MLPClassifier(activation = 'logistic', 
-	hidden_layer_sizes = 5, max_iter = 3000)
+	hidden_layer_sizes = 6, max_iter = 3000)
 
 mlp_best.fit(x_train,y_train)
 
 plt.figure()
-for i in range(0,5):
+for i in range(0,6):
 	plt.subplot(2,3,i+1)
 	plt.imshow(mlp_best.coefs_[0][:,i].reshape(8,8))
 	plt.title('Neuron {}'.format(i+1))
