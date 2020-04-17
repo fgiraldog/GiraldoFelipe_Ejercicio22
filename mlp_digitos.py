@@ -25,7 +25,7 @@ f1_test = []
 
 for element in neurons:
 	mlp = sklearn.neural_network.MLPClassifier(activation = 'logistic', 
-		hidden_layer_sizes = element, max_iter = 10000)
+		hidden_layer_sizes = element, max_iter = 3000)
 
 	mlp.fit(x_train,y_train)
 
@@ -36,7 +36,7 @@ for element in neurons:
 
 plt.figure()
 plt.subplot(211)
-plt.plot(neurons,loss, label = 'max_iter = 10000')
+plt.plot(neurons,loss, label = 'max_iter = 3000')
 plt.xlabel('Neurons')
 plt.ylabel('Loss')
 plt.legend()
@@ -52,7 +52,7 @@ plt.tight_layout()
 plt.savefig('loss_f1.png')
 
 mlp_best = sklearn.neural_network.MLPClassifier(activation = 'logistic', 
-	hidden_layer_sizes = 5, max_iter = 10000)
+	hidden_layer_sizes = 5, max_iter = 3000)
 
 mlp_best.fit(x_train,y_train)
 
